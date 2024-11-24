@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
-import YourMatchCard from "../components/YourMatchCard";
 import { apiEndPoint, baseURL } from "../constants";
-
+import { useEffect, useState } from "react";
 export default function YourMatches() {
   const [allUserMatches, setAllUserMatches] = useState();
 
   useEffect(() => {
-    const userId = localStorage.getItem("id");
+    const userId = localStorage.getItem("userId");
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -20,6 +18,7 @@ export default function YourMatches() {
         );
 
         const data = await response.json();
+        console.log(data);
         setAllUserMatches(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -31,25 +30,44 @@ export default function YourMatches() {
 
   console.log(allUserMatches);
   return (
-    <section className="py-16 bg-gray-100 h-screen">
-      <div className="container mx-auto">
+    <section className="py-16 bg-gray-100 min-h-screen">
+      <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold mb-8 text-center">
           Your Matches page
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-          {allUserMatches?.lostItems?.map((match) => (
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {allUserMatches?.map((match) => (
+            <div
+              key={match.id}
+              className="bg-white shadow-md rounded-lg overflow-hidden"
+            >
               <img
-                src="https://picsum.photos/200/300"
+                src={match.image}
                 alt="Design Image"
-                class="w-full h-64 object-cover"
+                className="w-full h-48 sm:h-64 md:h-72 lg:h-80 object-cover"
               />
-              <div class="p-4">
-                <h2 class="text-xl font-bold mb-2">Design Title</h2>
-                <p class="text-gray-700 mb-4">Design Description</p>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-                  #DesignType
+              <div className="p-4">
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2">
+                  #{match.type}
                 </span>
+                <h2 className="text-lg sm:text-xl font-bold mb-2">
+                  {match.type === "lost"
+                    ? match.lostItem.name
+                    : match.foundItem.name}
+                </h2>
+                <p className="text-gray-700 mb-4">
+                  {match.type === "lost"
+                    ? match.lostItem.description
+                    : match.foundItem.description}
+                </p>
+                <div className="flex justify-between">
+                  <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                    Confirm
+                  </button>
+                  <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                    Reject
+                  </button>
+                </div>
               </div>
             </div>
           ))}

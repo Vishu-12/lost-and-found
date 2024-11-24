@@ -1,21 +1,23 @@
-import React, { useState } from "react";
-import { apiEndPoint, baseURL } from "../constants";
+import PropTypes from "prop-types";
 
 export default function YourMatchCard({ allUserMatches }) {
   console.log("jdfjdnfjdn", allUserMatches);
   return (
     <>
       {allUserMatches?.lostItems?.map((match) => (
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div
+          key={match.id}
+          className="bg-white shadow-md rounded-lg overflow-hidden"
+        >
           <img
-            src="https://example.com/image.jpg"
+            src={match.image}
             alt="Design Image"
-            class="w-full h-64 object-cover"
+            className="w-full h-64 object-cover"
           />
-          <div class="p-4">
-            <h2 class="text-xl font-bold mb-2">Design Title</h2>
-            <p class="text-gray-700 mb-4">Design Description</p>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+          <div className="p-4">
+            <h2 className="text-xl font-bold mb-2">Design Title</h2>
+            <p className="text-gray-700 mb-4">Design Description</p>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
               #DesignType
             </span>
           </div>
@@ -24,3 +26,16 @@ export default function YourMatchCard({ allUserMatches }) {
     </>
   );
 }
+
+YourMatchCard.propTypes = {
+  allUserMatches: PropTypes.shape({
+    lostItems: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired,
+        image: PropTypes.string.isRequired,
+        // Add other properties of 'match' if needed
+      })
+    ),
+  }),
+};

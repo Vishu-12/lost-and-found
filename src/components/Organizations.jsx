@@ -1,29 +1,19 @@
-import React from "react";
-
 export default function Organizations() {
   const organizations = [
     {
       name: "Van Gogh Museum",
       location: "Amsterdam",
-      logo: "/placeholder.svg?height=100&width=100",
     },
-    { name: "Efteling", logo: "/placeholder.svg?height=100&width=100" },
-    {
-      name: "Dolfinarium",
-      description: "beleef de magie van dolfijnen",
-      logo: "/placeholder.svg?height=100&width=100",
-    },
-    { name: "MEININGER HOTELS", logo: "/placeholder.svg?height=100&width=100" },
-    {
-      name: "Hilversum Mediastad",
-      logo: "/placeholder.svg?height=100&width=100",
-    },
+    { name: "Efteling", location: "Kaatsheuvel" },
+    { name: "Dolfinarium", location: "Scheveningen" },
+    { name: "MEININGER HOTELS", location: "Amsterdam" },
+    { name: "Hilversum Mediastad", location: "Hilversum" },
   ];
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-white-100">
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-8 text-center">
-          Some organizations that use the Lost & Found software of lostOfound
+          Some organizations that use the Lost & Found software of Lost O Found
           are...
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">

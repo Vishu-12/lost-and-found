@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Awards() {
   const awards = [
     { name: "RTLZ", logo: "/placeholder.svg?height=100&width=100" },
@@ -14,7 +12,7 @@ export default function Awards() {
     },
   ];
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-100">
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-8 text-center">
           lostOfound Awards
