@@ -23,7 +23,8 @@ export default function Organizations() {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-8 text-center">
-          Some organizations that use the Lost & Found software of iLost are...
+          Some organizations that use the Lost & Found software of lostOfound
+          are...
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {organizations.map((org, index) => (

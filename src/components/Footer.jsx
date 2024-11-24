@@ -17,10 +17,10 @@ export default function Footer() {
             <h3 className="font-bold mb-4">About</h3>
             <ul className="space-y-2">
               <li>
-                <Link>About iLost</Link>
+                <Link>About lostOfound</Link>
               </li>
               <li>
-                <Link>Working at iLost</Link>
+                <Link>Working at lostOfound</Link>
               </li>
               <li>
                 <Link>Legal Notices</Link>
@@ -42,7 +42,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4">iLost Services</h3>
+            <h3 className="font-bold mb-4">lostOfound Services</h3>
             <ul className="space-y-2">
               <li>
                 <Link>Report found item</Link>
@@ -51,7 +51,7 @@ export default function Footer() {
                 <Link>Print insurance claim</Link>
               </li>
               <li>
-                <Link>Send an iLost Alert</Link>
+                <Link>Send an lostOfound Alert</Link>
               </li>
             </ul>
           </div>
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 flex flex-wrap justify-between items-center">
           <div className="space-y-2">
-            <p>&copy; 2024 iLost B.V.</p>
+            <p>&copy; 2024 lostOfound B.V.</p>
             <div className="space-x-4">
               <Link>Privacy policy</Link>
               <Link>Terms & Conditions</Link>

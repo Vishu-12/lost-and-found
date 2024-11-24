@@ -10,7 +10,7 @@ export default function Hero() {
             We've created 488,042 happy losers!
           </h1>
           <p className="text-xl mb-6">
-            iLost reunites people with Lost & Found property
+            lostOfound reunites people with Lost & Found property
           </p>
           <Link className="bg-yellow-400 text-teal-700 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition duration-300">
             I've found something!

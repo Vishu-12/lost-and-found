@@ -7,7 +7,7 @@ export default function VideoSection() {
       <div className="container mx-auto">
         <div className="bg-red-600 text-white p-8 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold mb-4">
-            Lost something? iLost is the solution!
+            Lost something? lostOfound is the solution!
           </h2>
           <div className="relative">
             <img

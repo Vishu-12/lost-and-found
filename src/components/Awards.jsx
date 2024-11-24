@@ -16,7 +16,9 @@ export default function Awards() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto">
-        <h2 className="text-2xl font-bold mb-8 text-center">iLost Awards</h2>
+        <h2 className="text-2xl font-bold mb-8 text-center">
+          lostOfound Awards
+        </h2>
         <div className="flex flex-wrap justify-center items-center gap-8">
           {awards.map((award, index) => (
             <div key={index} className="text-center">
